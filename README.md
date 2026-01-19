@@ -7,18 +7,17 @@ This project computes a **minimum (candidate) key** of a relational schema given
 
 Given:
 - a finite set of attributes $R$, and
-- a set of functional dependencies \( \mathcal{F} \),
+- a set of functional dependencies $\mathcal{F}$,
 
 the goal is to find the **smallest subset of attributes**
-\[
+
+$$
 K \subseteq R
-\]
-such that the **closure** of \( K \) under \( \mathcal{F} \) equals the entire schema:
-\[
+$$
+such that the **closure** of $K$ under $\mathcal{F}$ equals the entire schema:
+$$
 K^+_{\mathcal{F}} = R.
-\]
-
-
+$$
 
 The project implements an integer program that provably yields the key of smallest cardinality.  
 

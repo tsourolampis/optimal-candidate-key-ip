@@ -6,7 +6,7 @@
 This project computes a **minimum (candidate) key** of a relational schema given a set of **functional dependencies (FDs)**. A **key** is a set of attributes that functionally determines all attributes in the relation.
 
 Given:
-- a finite set of attributes \( R \), and
+- a finite set of attributes $R$, and
 - a set of functional dependencies \( \mathcal{F} \),
 
 the goal is to find the **smallest subset of attributes**

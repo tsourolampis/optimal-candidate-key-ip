@@ -14,9 +14,22 @@ from pyomo.environ import (
     value,
 )
 
-from FD import FunctionalDependency as FD, get_all_vars
+from FD import FunctionalDependency as FD
 
 T = TypeVar("T")
+
+def get_all_vars(fds: Iterable[FunctionalDependency]) -> Set[T]:
+    """
+    Return the set of all attributes appearing in a collection of FDs.
+    """
+    all_keys: Set[T] = set()
+    all_values: Set[T] = set()
+
+    for fd in fds:
+        all_keys |= set(fd.keys)
+        all_values |= set(fd.values)
+
+    return all_keys | all_values
 
 def fd_closure(
     fds: List[FD],

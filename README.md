@@ -29,3 +29,16 @@ The project implements an integer program that provably yields the key of smalle
 - Relational schema design and normalization
 - Database theory research and teaching
 - Query Optimization
+
+
+## How to run
+
+This project uses a `src/` layout, `pyproject.toml` for packaging, and `pytest` for testing. Assuming you have macOS / Linux
+create a virtual environment.
+
+1.  `python3 -m venv .venv`
+2. Activate it `source .venv/bin/activate`.
+3. Install using `pip install -e .[dev]`
+4. Run a quick import check `python -c "from tcand import minimal_core_ip_exact; print('OK')"`
+5. If you haven't installed GLPK run `brew install glpk`.
+6. Run all tests using `pytest -v`

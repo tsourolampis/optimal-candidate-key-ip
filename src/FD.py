@@ -72,17 +72,7 @@ class FunctionalDependency:
             return "{" + ", ".join(map(str, S)) + "}"
         return f"FD : {fmt(self.keys)} ⟹ {fmt(self.values)}"
 
+    def __str__(self) -> str:
+        return self.__repr__()
+
 FD = FunctionalDependency
-
-def get_all_vars(fds: Iterable[FunctionalDependency]) -> Set[T]:
-    """
-    Return the set of all attributes appearing in a collection of FDs.
-    """
-    all_keys: Set[T] = set()
-    all_values: Set[T] = set()
-
-    for fd in fds:
-        all_keys |= set(fd.keys)
-        all_values |= set(fd.values)
-
-    return all_keys | all_values

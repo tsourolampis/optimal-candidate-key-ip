@@ -14,7 +14,7 @@ from pyomo.environ import (
     value,
 )
 
-from .FD import FunctionalDependency as FD, get_all_vars
+from FD import FunctionalDependency as FD, get_all_vars
 
 T = TypeVar("T")
 
@@ -113,8 +113,6 @@ def minimal_core_ip_exact(
 
     if not target_in:
         return set(isolated)
-    if len(target_in) == 1:
-        return set(target_in) | set(isolated)
 
     n = len(fd_vars)
     R = n  # n iterations suffice

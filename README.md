@@ -1,4 +1,4 @@
-# Optimal Candidate Key in Relational Schemas
+# Optimal Candidate Key in Relational Schemas using Integer Programming
 
 
 ## Overview
@@ -24,6 +24,8 @@ The project implements an integer program that provably yields the key of smalle
 - ✔ Correctness: the returned set is a valid key.
 - ✔ Minimum size: instead of the usual guarantee that no strict subset is also a key, the IP returns the key of smallest possible cardinality.
 
+The details can be found in the paper [Targeted Least Cardinality Candidate Key for Relational Database](https://tsourakakis.com/wp-content/uploads/2024/08/tcand.pdf) that appeared in ICDT 2025.
+
 ## Use Cases
 
 - Relational schema design and normalization
@@ -42,3 +44,5 @@ create a virtual environment.
 4. Run a quick import check `python -c "from tcand import minimal_core_ip_exact; print('OK')"`
 5. If you haven't installed GLPK run `brew install glpk`.
 6. Run all tests using `pytest -v`
+
+
